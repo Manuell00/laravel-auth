@@ -4,19 +4,18 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+// Uso il model
+use App\Models\Project;
 
-class DatabaseSeeder extends Seeder
+class ProjectTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        // Richiamo nel db il file seeder
-        $this->call([
-            ProjectTableSeeder::class
-        ]);
+        Project::factory()->count(100)->create();
     }
 }
