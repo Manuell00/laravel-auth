@@ -5,6 +5,8 @@
 
         {{-- Versione UTENTE --}}
         @auth
+        <h1>Benvenuto : {{Auth::user() -> name}}</h1>
+
             <ol class="list-unstyled">
                 <li> <b>Id :</b> {{ $project -> id}}</li>
                 <br>

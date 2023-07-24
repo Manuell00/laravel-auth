@@ -5,7 +5,7 @@
 
         {{-- Versione UTENTE --}}
         @auth
-            <h1>Benvenuto : </h1>
+            <h1>Benvenuto : {{Auth::user() -> name}}</h1>
 
             {{-- Creo una lista senza link visibile a tutti --}}
             <ol class="list-unstyled">

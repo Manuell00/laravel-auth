@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 // Importo il controller
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\LoggedController;
-
+use GuzzleHttp\Middleware;
 
 // Inserisco la route principale
 Route::get('/', [GuestController::class, 'index'])
@@ -14,6 +14,7 @@ Route::get('/', [GuestController::class, 'index'])
 
 // Inserisco la show se loggato
 Route::get('/show/{id}', [LoggedController::class, 'show'])
+    ->middleware(['auth'])
     ->name("project.show");
 
 Route::get('/dashboard', function () {
