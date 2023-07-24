@@ -5,20 +5,20 @@ use Illuminate\Support\Facades\Route;
 
 // Importo il controller
 use App\Http\Controllers\GuestController;
-// use App\Http\Controllers\LoggedController;
+use App\Http\Controllers\LoggedController;
 
 
 // Inserisco la route principale
 Route::get('/', [GuestController::class, 'index'])
     ->name("project.index");
 
-// // Inserisco la show se loggato
-// Route::get('/', [LoggedController::class, 'show'])
-//     ->name("project.show");
+// Inserisco la show se loggato
+Route::get('/', [LoggedController::class, 'show'])
+    ->name("project.show");
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
