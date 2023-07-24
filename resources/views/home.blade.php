@@ -11,7 +11,7 @@
             <ol class="list-unstyled">
                 @foreach ($projects as $project)
                     <li>
-                        <a href="{{ route('show', $project -> id)}}">{{$project -> project_name}}</a>
+                        <a href="{{ route('project.show', $project -> id)}}">{{$project -> project_name}}</a>
                     </li>
                     
                 @endforeach

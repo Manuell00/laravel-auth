@@ -13,7 +13,7 @@ Route::get('/', [GuestController::class, 'index'])
     ->name("project.index");
 
 // Inserisco la show se loggato
-Route::get('/', [LoggedController::class, 'show'])
+Route::get('/show/{id}', [LoggedController::class, 'show'])
     ->name("project.show");
 
 Route::get('/dashboard', function () {
