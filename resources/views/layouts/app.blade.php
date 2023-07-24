@@ -84,10 +84,12 @@
                 </div>
             </div>
         </nav>
+        
+                {{-- Yeld per il content --}}
+                <main>
+                    @yield('content')
+                </main>
 
-        <main class="">
-            @yield('content')
-        </main>
     </div>
 </body>
 
